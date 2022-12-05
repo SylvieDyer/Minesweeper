@@ -1,0 +1,79 @@
+<head>
+    <!-- toasts -->
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h6>CSDS221 Project 3<br>Sylvie Dyer</h6>
+    <h1>Minesweeper</h1>
+
+    <!-- User Options (Board Size, Start Game, Instructions) -->
+    <div class="aboveGame">
+        <select name="widthPicker" id="widthPicker" placeholder="Pick A Board Width">
+            <option value="" disabled selected>Pick A Board Width</option>
+        </select>  
+        <button class="restart" id="restart">Start Over</button>
+        <button id="submit">Set Board Width</button>
+        <button id="helpBtn">How to play</button>
+    </div> 
+
+    <!-- Bomb Number -->
+    <p id="bombCount">Number of bombs hidden in the board: 20</p>
+    <p id="flagNum">Number of flags placed: 0</p>
+
+    <!-- Board  -->
+    <div class="grid">
+    </div>
+
+    <!-- Instruction Modal -->
+    <div id="instructions" class="modal">
+        <!-- Modal content -->
+        <div id="instructionsContent" class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome to Minesweeper!</h2>
+            <p style="font-size: 1.24rem">
+                If you're unfamiliar with the rules of this game, below is a brief explanation:<br><br>
+                Your goal is to uncover all of the mines properly. At the top of the board, you can see how many mines there are hidden in the board. <br><br>
+                If you suspect a mine is hidden beneath the tile, right click the tile to flag it- you win when you have flagged all of the hidden mines. <br><br>
+                If you suspect no mines hide beneath a tile, click it to reveal how many mines it touches- you lose if you select a bomb. <br>
+                A tile can touch anywhere between 0 and 8 mines as indicated by the number on the tile once it is revealed. (This includes all of the tile's edges, along with each of its corners) <br><br>
+                Finally, you can only place as many flags as there are bombs, so place wisely! If you place all of your allotted flags, but do not successfully identify all of the bombs, a message will appear. <br><br> 
+              If you're up for a challenge or want to start off with fewer tiles, you can even change the board width with the width picker, and hit set board width to adjust the width! <br><br>
+                Begin the game by clicking any tile- hopefully it's not a bomb!
+                <br>
+                Have fun! 
+            </p>
+        </div>
+    </div>
+
+     <!-- Win Modal -->
+     <div id="win" class="modal">
+        <!-- Modal content -->
+        <div id="winContent" class="modal-content">
+            <span class="close">&times;</span>
+            <p>Yayyy you won!!</p>
+            <p style="font-size: 1rem">Now you've earned your bragging rights!</p>
+            <button class="restart" id="replay">Play Again</button>
+        </div>
+    </div>
+
+     <!-- Lose Modal -->
+     <div id="lose" class="modal">
+        <!-- Modal content -->
+        <div id="loseContent" class="modal-content">
+            <span class="close">&times;</span>
+            <p>Boo you lose :(</p>
+            <p style="font-size: 1rem">Better luck next time!!!</p>
+            <button class="restart" id="tryAgain">Try Again</button>
+        </div>
+    </div>
+    
+    <script src="script.js" > </script>
+</body>

@@ -1,0 +1,209 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    background-color: rgb(242, 235, 227);
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+h6 {
+    text-align: right;
+}
+
+button, select{
+    background-color:rgba(219, 109, 103, 0.568);
+    border-radius: 15px;
+    border-style: none;
+    box-shadow:rgb(168, 164, 164);
+  
+}
+
+button:hover {
+    background-color:rgba(219, 109, 103, 0.383);
+}
+
+.aboveGame {
+    padding: 1.8rem;
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid: 
+    "picker setWidth"
+    "howTo startOver";
+    
+    row-gap: 10%;
+    column-gap: 16%;
+    right: 0;
+}
+
+#widthPicker, #submit, #restart, #helpBtn {
+    font-size: 1rem;
+    padding: .8rem;
+}
+
+#submit  { grid-area: "setWidth"; }
+#restart { grid-area:"startOver"; }
+#helpBtn { grid-area:"howTo"; }
+#widthPicker {
+    grid-area: "picker";
+    text-align: center;
+}
+
+#bombCount, #flagNum {
+    font-size: 1rem;
+    text-align: center; 
+    margin-bottom: 1rem;
+}
+  
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(184, 184, 184);
+    margin: auto;
+    border: double black 10px;
+}
+
+.grid div {
+    height: 40px;
+    width: 40px;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 40px;
+    border: outset 2px;
+}
+
+/* for each visited tile & corresponding number */
+.visited {
+    background-color:  rgb(168, 164, 164);
+}
+
+.visited[data="1"] {
+    color:rgb(222, 241, 245);
+    background-color:rgba(70, 130, 182, 0.568);
+}
+
+.visited[data="2"] {
+    color:rgb(245, 235, 222);
+    background-color:rgba(182, 148, 70, 0.697);
+}
+
+.visited[data="3"] {
+    color:rgb(231, 245, 222);
+    background-color:rgba(72, 182, 70, 0.577);
+}
+
+.visited[data="4"] {
+    color:rgb(234, 222, 245);
+    background-color:rgba(122, 70, 182, 0.488);
+}
+
+.visited[data="5"] {
+    color:rgb(245, 229, 222);
+    background-color:rgba(182, 98, 70, 0.697);
+}
+
+.visited[data="6"] {
+    color:rgb(234, 222, 245);
+    background-color:rgba(182, 70, 132, 0.697);
+}
+
+.visited[data="7"] {
+    color:rgb(245, 235, 222);
+    background-color:rgba(59, 204, 182, 0.697);
+}
+
+.visited[data="8"] {
+    color:rgb(245, 235, 222);
+    background-color:rgba(182, 70, 70, 0.697);
+}
+
+/* exposing bombs for testing */
+/* .bomb{
+     background-color: paleturquoise;
+} */
+
+/* Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    animation: fadeEffect 1s; /* fade in */
+
+}
+@keyframes fadeEffect {
+    from {opacity: 0}
+    to {opacity: 1;}
+}
+
+#lose, #win {
+    padding-top: 25%;
+}
+
+/* modal (content) */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 25px;
+    text-align: center;
+    overflow: scroll;
+}
+
+#instructionsContent{
+    width: 85%; 
+}
+
+#loseContent {
+    background-color: rgba(226, 82, 82, 0.972);
+    color: white;
+    width: 25%;
+}
+
+#winContent{
+    background-color: rgba(72, 201, 104, 0.972);
+    color: black;
+    width: 25%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* retry buttons */
+#tryAgain{
+    font-size: 15px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color:rgb(247, 229, 229);
+}
+
+#replay {
+    font-size: 15px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color:rgb(229, 247, 231);
+}
