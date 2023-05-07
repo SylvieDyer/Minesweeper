@@ -1,3 +1,3 @@
-# CSDS221_P3
-
-Full Stack Project 3- Minesweeper Game using HTML, CSS, and JavaScript
+# Minesweeper Game 
+Coded using HTML, CSS, and JavaScript 
+Project for Full Stack Web Development course
